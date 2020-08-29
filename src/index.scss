@@ -17,6 +17,8 @@ body {
     width: 100%;
     z-index: 1;
     overflow-y: auto;
+    box-sizing: border-box;
+    padding: 20px;
   }
 }
 

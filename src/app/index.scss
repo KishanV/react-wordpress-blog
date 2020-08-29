@@ -1,4 +1,4 @@
-body > .Container > .App {
+body > .container > .app {
   min-height: 300px;
   position: relative;
   width: 100%;
@@ -8,10 +8,9 @@ body > .Container > .App {
   box-sizing: border-box;
   border-radius: 14px;
   margin: auto;
-  margin-top: 20px;
   height: fit-content;
   display: table;
-  margin-bottom: 20px;
+
   > .body {
     width: calc(100% - 350px);
     height: auto;
@@ -20,6 +19,7 @@ body > .Container > .App {
     border-right: 1px solid #d4d4d4;
     min-height: 100%;
   }
+
   > .side-bar {
     width: 350px;
     height: auto;
@@ -27,5 +27,24 @@ body > .Container > .App {
     float: left;
     border-left: 1px solid #d4d4d4;
     margin-left: -1px;
+  }
+}
+
+@media (min-width: 0px) {
+  body > .container > .app > .body {
+    width: 100%;
+    margin-bottom: -20px;
+  }
+}
+
+@media (min-width: 768px) {
+  body > .container > .app > .body {
+    width: calc(100% - 300px);
+  }
+}
+
+@media (min-width: 992px) {
+  body > .container > .app > .body {
+    width: calc(100% - 350px);
   }
 }
