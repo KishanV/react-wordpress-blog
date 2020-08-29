@@ -1,3 +1,4 @@
+import "./constants/index.scss";
 import "./index.scss";
 import { render } from "react-dom";
 import React = require("react");
@@ -8,7 +9,7 @@ window.oncontextmenu = (e: MouseEvent) => {
 };
 
 const appElm = document.createElement("div");
-appElm.classList.add("Container");
+appElm.classList.add("container");
 document.body.appendChild(appElm);
 
 window.onload = () => {

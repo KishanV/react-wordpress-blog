@@ -1,8 +1,8 @@
 import { combineReducers, createStore } from "redux";
-import { PostListController, PostListModel } from "./post-list";
+import { PostListController, PostList } from "./post-list";
 
 export type ReduxType = {
-  postList: PostListModel;
+  posts: PostList;
 };
 
 type SyncReduxType = {
@@ -13,7 +13,7 @@ type SyncReduxType = {
 };
 
 const reduxObj: SyncReduxType = {
-  postList: PostListController.reducer,
+  posts: PostListController.reducer,
 };
 
 const reducer = combineReducers(reduxObj);
