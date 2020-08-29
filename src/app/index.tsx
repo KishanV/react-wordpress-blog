@@ -1,6 +1,9 @@
 import React = require("react");
 import "./index.scss";
 import { hot } from "react-hot-loader/root";
+import { Provider } from "react-redux";
+import { appStore } from "../reducers";
+import { HashRouter, Route } from "react-router-dom";
 
 export type AppState = {};
 
@@ -17,4 +20,12 @@ export class App extends React.Component<any, AppState> {
   }
 }
 
-export default hot(App);
+export default hot(() => {
+  return (
+    <Provider store={appStore}>
+      <HashRouter>
+        <Route path="/" component={App} />
+      </HashRouter>
+    </Provider>
+  );
+});
