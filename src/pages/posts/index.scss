@@ -1,7 +1,7 @@
-body > .container > .app > .posts {
+.posts {
   height: auto;
   position: relative;
-  width: calc(100% - 350px);
+  width: 100%;
   float: left;
   box-sizing: border-box;
   padding: 20px;

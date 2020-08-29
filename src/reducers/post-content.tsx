@@ -5,29 +5,28 @@ export const PostContentActionTypes = {
 };
 
 export type PostContentState = {
-  post?: PostModel;
+  content?: PostModel;
 };
 
 export class PostContentController {
   static value: PostContentState = {
-    post: undefined,
+    content: undefined,
   };
 
   static reducer(state = PostContentController.value, action: any) {
     if (action && action.type === PostContentActionTypes.Set) {
       state = {
         ...state,
-        post: action.post,
+        content: action.post,
       };
     }
-    console.log("state", state, action);
     return state;
   }
 
-  static setData(post: PostModel) {
+  static setData(content: PostModel) {
     return {
       type: PostContentActionTypes.Set,
-      post,
+      content,
     };
   }
 }

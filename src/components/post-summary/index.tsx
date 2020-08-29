@@ -5,6 +5,7 @@ import { connect } from "react-redux";
 import { PostActionTypes } from "../../reducers/posts";
 import { PostModel } from "../../reducers/post-model";
 import { timeSince } from "../../utils";
+import { PostContentActionTypes } from "../../reducers/post-content";
 
 type Props = {
   index: number;
@@ -18,13 +19,14 @@ export class PostSummary extends React.Component<Props, State> {
   state: State = {
     fetching: false,
   };
-
-  getTime() {
-    return timeSince(this.props.data.date);
-  }
+  detailsRef: React.RefObject<HTMLDivElement> = React.createRef();
 
   constructor(props: any) {
     super(props);
+  }
+
+  getTime() {
+    return timeSince(this.props.data.date);
   }
 
   componentDidMount() {
@@ -33,11 +35,21 @@ export class PostSummary extends React.Component<Props, State> {
     }
   }
 
-  detailsRef: React.RefObject<HTMLDivElement> = React.createRef();
+  onClick = () => {
+    this.props.reduxDispatch({
+      type: PostContentActionTypes.Set,
+      post: this.props.data,
+    });
+    location.href = `#/post/${this.props.data.ID}`;
+  };
 
   render() {
     return (
-      <div className={"post-summary fancy-hover"} tabIndex={this.props.index}>
+      <div
+        onClick={this.onClick}
+        className={"post-summary fancy-hover"}
+        tabIndex={this.props.index}
+      >
         <div className="title row mb-10">
           <div className="col-8">
             {this.props.index + 1}. {this.props.data.title}

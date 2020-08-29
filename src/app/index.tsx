@@ -18,12 +18,16 @@ class App extends React.Component<any, AppState> {
   }
 
   render() {
+    const path = location.pathname + location.hash;
     return (
       <div className={"app"}>
-        <Switch>
-          <Route path="/post/:id" component={PostContent} />
-          <Route path="/" component={Posts} />
-        </Switch>
+        <div className={"body"}>
+          <Switch>
+            <Route key={path} path="/post/:id" component={PostContent} />
+            <Route key={path} path="/" component={Posts} />
+          </Switch>
+        </div>
+        <div className={"side-bar"}></div>
       </div>
     );
   }

@@ -12,4 +12,20 @@ body > .Container > .App {
   height: fit-content;
   display: table;
   margin-bottom: 20px;
+  min-height: 100%;
+  > .body {
+    width: calc(100% - 350px);
+    height: auto;
+    position: relative;
+    float: left;
+    border-right: 1px solid #d4d4d4;
+  }
+  > .side-bar {
+    width: 350px;
+    height: auto;
+    position: relative;
+    float: left;
+    border-left: 1px solid #d4d4d4;
+    margin-left: -1px;
+  }
 }

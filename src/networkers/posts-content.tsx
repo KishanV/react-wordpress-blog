@@ -1,16 +1,16 @@
 const axios = require("axios");
-import { PostActionTypes } from "../reducers/posts";
+import { PostContentActionTypes } from "../reducers/post-content";
 import { API_HOST } from "../constants";
 
-export async function fetchPosts(reduxDispatch: any, id: number) {
+export async function fetchPostContent(reduxDispatch: any, id: number) {
   let res = await axios({
     method: "get",
     url: `${API_HOST}post?id=${id}`,
   });
   if (res.status) {
     reduxDispatch({
-      type: PostActionTypes.Set,
-      list: res.data.posts,
+      type: PostContentActionTypes.Set,
+      post: res.data,
     });
   }
 }

@@ -4,7 +4,7 @@ export const PostActionTypes = {
   Set: "PostList_Set",
 };
 
-export type Posts = {
+export type PostsState = {
   list: PostModel[];
 };
 
@@ -22,7 +22,6 @@ export class PostsController {
         list: [...state.list, ...action.list],
       };
     }
-    console.log("state", state, action);
     return state;
   }
 
