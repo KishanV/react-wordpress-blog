@@ -6,6 +6,7 @@ import { appStore } from "../reducers";
 import { HashRouter, Route, Switch } from "react-router-dom";
 import Posts from "../pages/posts";
 import PostContent from "../pages/post-content";
+import Sidebar from "../components/sidebar";
 
 export type AppState = {};
 
@@ -27,7 +28,7 @@ class App extends React.Component<any, AppState> {
             <Route key={path} path="/" component={Posts} />
           </Switch>
         </div>
-        <div className={"side-bar"}></div>
+        <Sidebar />
       </div>
     );
   }

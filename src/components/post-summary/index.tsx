@@ -1,8 +1,7 @@
 import React = require("react");
 import "./index.scss";
 import { ReduxType } from "../../reducers";
-import { connect } from "react-redux";
-import { PostActionTypes } from "../../reducers/posts";
+import { connect } from "react-redux"; 
 import { PostModel } from "../../reducers/post-model";
 import { timeSince } from "../../utils";
 import { PostContentActionTypes } from "../../reducers/post-content";
