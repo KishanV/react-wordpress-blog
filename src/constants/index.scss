@@ -52,3 +52,8 @@
     margin-right: #{$i}px;
   }
 }
+
+.fancy-hover:hover {
+  border: 1px solid rgba(2, 52, 216, 0.719);
+  box-shadow: 0 0 0px 4px rgba(2, 52, 216, 0.2);
+}

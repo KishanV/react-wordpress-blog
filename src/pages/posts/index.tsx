@@ -5,6 +5,7 @@ import { connect } from "react-redux";
 import { PostModel, PostActionTypes } from "../../reducers/post-list";
 import { fetchPosts } from "../../networkers/posts";
 import { PostSummary } from "../../components/post-summary";
+import Button from "../../components/button";
 
 export type PostsProps = {
   list: PostModel[];
@@ -36,19 +37,37 @@ export class Posts extends React.Component<PostsProps, any> {
             />
           );
         })}
+        {this.props.list.length !== 0 && !this.state.fetching && (
+          <div className="row">
+            <Button
+              aria-disabled={!this.state.fetching}
+              onClick={() => {
+                console.log(this.props.list);
+                this.loadPosts(this.props.list.length);
+              }}
+            >
+              Older Posts
+            </Button>
+          </div>
+        )}
+        {this.state.fetching && <div className="loading">Loading Posts...</div>}
       </div>
     );
   }
 
+  async loadPosts(offset: number = 0) {
+    this.setState({
+      fetching: true,
+    });
+    await fetchPosts(this.props.reduxDispatch, offset);
+    this.setState({
+      fetching: false,
+    });
+  }
+
   async componentDidMount() {
     if (!this.props.list.length) {
-      this.setState({
-        fetching: true,
-      });
-      await fetchPosts(this.props.reduxDispatch, 0);
-      this.setState({
-        fetching: false,
-      });
+      this.loadPosts();
     }
   }
 }

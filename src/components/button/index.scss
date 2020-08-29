@@ -1,0 +1,21 @@
+.button {
+  position: relative;
+  width: auto;
+  background-color: #fff;
+  border: 1px solid #d4d4d4;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  float: left;
+  transform: scale3d(1, 1, 1);
+  cursor: pointer;
+  transition: 200ms;
+  box-sizing: border-box;
+  line-height: 30px;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin: auto;
+
+  &:focus{
+    outline: none;
+  }
+}

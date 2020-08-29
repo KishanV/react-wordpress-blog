@@ -36,7 +36,7 @@ export class PostSummary extends React.Component<Props, State> {
 
   render() {
     return (
-      <div className={"post-summary"}>
+      <div className={"post-summary fancy-hover"} tabIndex={this.props.index}>
         <div className="title row mb-10">
           <div className="col-8">
             {this.props.index + 1}. {this.props.data.title}

@@ -5,4 +5,8 @@ body > .container > .app > .posts {
   float: left;
   box-sizing: border-box;
   padding: 20px;
+  > .loading {
+    width: 100%;
+    text-align: center;
+  }
 }
