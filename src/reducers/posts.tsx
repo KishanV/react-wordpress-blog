@@ -1,33 +1,21 @@
+import { PostModel } from "./post-model";
+
 export const PostActionTypes = {
   Set: "PostList_Set",
 };
 
-export type PostModel = {
-  title: string;
-  excerpt: string;
-  ID: 7941;
-  date: string;
-  post_thumbnail: {
-    ID: 7967;
-    URL: string;
-    height: number;
-    mime_type: string;
-    width: number;
-  };
-};
-
-export type PostList = {
+export type Posts = {
   list: PostModel[];
 };
 
-export class PostListController {
+export class PostsController {
   static value: {
     list: PostModel[];
   } = {
     list: [],
   };
 
-  static reducer(state = PostListController.value, action: any) {
+  static reducer(state = PostsController.value, action: any) {
     if (action && action.type === PostActionTypes.Set) {
       state = {
         ...state,

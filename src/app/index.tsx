@@ -5,7 +5,7 @@ import { Provider } from "react-redux";
 import { appStore } from "../reducers";
 import { HashRouter, Route, Switch } from "react-router-dom";
 import Posts from "../pages/posts";
-import PostView from "../pages/post-view";
+import PostContent from "../pages/post-content";
 
 export type AppState = {};
 
@@ -21,8 +21,8 @@ class App extends React.Component<any, AppState> {
     return (
       <div className={"app"}>
         <Switch>
-          <Route path="/posts" component={Posts} />
-          <Route path="/post/:id" component={PostView} />
+          <Route path="/post/:id" component={PostContent} />
+          <Route path="/" component={Posts} />
         </Switch>
       </div>
     );

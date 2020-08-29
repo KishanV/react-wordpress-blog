@@ -2,14 +2,10 @@ const axios = require("axios");
 import { PostActionTypes } from "../reducers/posts";
 import { API_HOST } from "../constants";
 
-export async function fetchPosts(
-  reduxDispatch: any,
-  offset: number,
-  limit: number = 25
-) {
+export async function fetchPosts(reduxDispatch: any, id: number) {
   let res = await axios({
     method: "get",
-    url: `${API_HOST}posts?offset=${offset}&limit=${limit}`,
+    url: `${API_HOST}post?id=${id}`,
   });
   if (res.status) {
     reduxDispatch({

@@ -2,10 +2,10 @@ import React = require("react");
 import "./index.scss";
 import { ReduxType } from "../../reducers";
 import { connect } from "react-redux";
-import { PostModel, PostActionTypes } from "../../reducers/post-list";
 import { fetchPosts } from "../../networkers/posts";
 import { PostSummary } from "../../components/post-summary";
 import Button from "../../components/button";
+import { PostModel } from "../../reducers/post-model";
 
 export type PostsProps = {
   list: PostModel[];

@@ -2,7 +2,8 @@ import React = require("react");
 import "./index.scss";
 import { ReduxType } from "../../reducers";
 import { connect } from "react-redux";
-import { PostModel, PostActionTypes } from "../../reducers/post-list";
+import { PostActionTypes } from "../../reducers/posts";
+import { PostModel } from "../../reducers/post-model";
 import { timeSince } from "../../utils";
 
 type Props = {
