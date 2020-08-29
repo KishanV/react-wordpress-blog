@@ -7,7 +7,7 @@ import { HashRouter, Route } from "react-router-dom";
 
 export type AppState = {};
 
-export class App extends React.Component<any, AppState> {
+class App extends React.Component<any, AppState> {
   state: AppState = {
     isAdded: false,
   };
