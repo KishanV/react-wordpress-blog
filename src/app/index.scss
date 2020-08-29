@@ -10,6 +10,8 @@ body > .container > .app {
   margin: auto;
   height: fit-content;
   display: table;
+  max-width: 100%;
+  padding-bottom: 20px;
 
   > .body {
     width: calc(100% - 350px);
@@ -17,7 +19,6 @@ body > .container > .app {
     position: relative;
     float: left;
     border-right: 1px solid #d4d4d4;
-    min-height: 100%;
   }
 
   > .side-bar {
@@ -31,20 +32,33 @@ body > .container > .app {
 }
 
 @media (min-width: 0px) {
-  body > .container > .app > .body {
-    width: 100%;
-    margin-bottom: -20px;
+  body > .container > .app {
+    display: flex;
+    flex-direction: column;
+    > .body {
+      border-right: 0px solid #d4d4d4;
+      width: 100%;
+      margin-bottom: -20px;
+      position: relative;
+      float: left;
+    }
   }
 }
 
 @media (min-width: 768px) {
-  body > .container > .app > .body {
-    width: calc(100% - 300px);
+  body > .container > .app {
+    display: table;
+    > .body {
+      width: calc(100% - 300px);
+    }
   }
 }
 
 @media (min-width: 992px) {
-  body > .container > .app > .body {
-    width: calc(100% - 350px);
+  body > .container > .app {
+    display: table;
+    > .body {
+      width: calc(100% - 350px);
+    }
   }
 }

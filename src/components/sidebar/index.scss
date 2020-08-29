@@ -5,6 +5,7 @@
   float: left;
   box-sizing: border-box;
   padding: 20px;
+  padding-bottom: 0;
   border-left: 1px solid #d4d4d4;
   margin-left: -1px;
   font-size: 14px;
@@ -14,7 +15,6 @@
     min-height: 100px;
     background-color: #fff;
     border: 1px solid #d4d4d4;
-    margin-bottom: 20px;
     border-radius: 10px;
     padding: 10px;
     float: left;
@@ -38,6 +38,7 @@
 @media (min-width: 0px) {
   .sidebar {
     width: 100%;
+    border-left: 1px solid #d4d4d4;
   }
 }
 

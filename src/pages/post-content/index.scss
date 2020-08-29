@@ -1,21 +1,10 @@
 .post-content {
+  height: auto;
   position: relative;
   width: 100%;
-  margin-bottom: 20px;
-  border-radius: 10px;
-  padding: 10px;
   float: left;
-  transform: scale3d(1, 1, 1);
-  cursor: pointer;
-  transition: 200ms;
   box-sizing: border-box;
-  max-width: 100%;
   padding: 20px;
-
-  &:last-child {
-    margin-bottom: 0px;
-  }
-
   > .title {
     font-size: 18px;
     > .time {
@@ -29,10 +18,11 @@
     padding: 10px;
     padding-right: 0px;
     font-size: 16px;
+    width: 100%;
     > p {
       margin: 0;
     }
-
+    box-sizing: border-box;
     img {
       max-width: 100%;
     }
